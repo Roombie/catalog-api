@@ -75,5 +75,5 @@ database/   schema.sql (tablas, seed, stored procedure)
 
 ## Autor
 
-Enger Eduardo González Méndez — Ingeniero de Sistemas
+Roombie
 GitHub: https://github.com/Roombie
