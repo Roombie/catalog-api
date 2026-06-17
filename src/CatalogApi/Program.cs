@@ -1,4 +1,10 @@
+using CatalogApi.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 
@@ -19,5 +25,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapGet("/health/db", async (AppDbContext db) =>
+    await db.Database.CanConnectAsync() ? "DB OK" : "DB FAIL");
 
 app.Run();

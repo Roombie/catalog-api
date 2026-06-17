@@ -1,3 +1,6 @@
+using CatalogApi.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace CatalogApi;
 
 public class WeatherForecast

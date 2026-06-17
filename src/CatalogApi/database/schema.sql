@@ -109,3 +109,4 @@ GO
 
 -- Prueba rápida:
 -- EXEC dbo.sp_LowStockReport @Threshold = 5;
+c
