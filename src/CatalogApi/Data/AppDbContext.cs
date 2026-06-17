@@ -18,6 +18,9 @@ public class AppDbContext : DbContext
         {
             e.Property(c => c.Name).HasMaxLength(100).IsRequired();
             e.HasIndex(c => c.Name).IsUnique();
+            e.Property(c => c.CreatedAt)
+                .HasDefaultValueSql("SYSUTCDATETIME()")
+                .ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<Product>(e =>

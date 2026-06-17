@@ -1,6 +1,26 @@
-@CatalogApi_HostAddress = http://localhost:5143
+@host = http://localhost:5143
 
-GET {{CatalogApi_HostAddress}}/weatherforecast/
-Accept: application/json
+### Listar todas las categorías (GET)
+GET {{host}}/api/categories
 
-###
+### Crear una categoría nueva (POST)
+POST {{host}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Cinturones"
+}
+
+### Obtener una categoría por id (GET)
+GET {{host}}/api/categories/1
+
+### Actualizar una categoría (PUT)
+PUT {{host}}/api/categories/6
+Content-Type: application/json
+
+{
+  "name": "Cinturones"
+}
+
+### Borrar una categoría (DELETE)
+DELETE {{host}}/api/categories/6
